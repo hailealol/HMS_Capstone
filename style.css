@@ -1,0 +1,161 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: "Alegreya", serif;
+}
+
+body {
+  font-size: 17px;
+  line-height: 1.7;
+  background-color: #fafafa;
+  height: 100%;
+  width: 100%;
+}
+
+.home {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  height: 100vh;
+}
+
+/* Left Side */
+
+/* Nav Bar */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+#logo {
+  height: 64px;
+  width: 70px;
+}
+
+.nav li,
+.footer li {
+  display: inline;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.nav a:hover,
+#active {
+  background: linear-gradient(to right, #fe6071, #9ed8ff 100%);
+  background-position: 0 100%;
+  background-size: 100% 2px;
+  background-repeat: repeat-x;
+}
+
+/* Headline */
+
+.homeContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 11vh;
+  padding: 0.5rem 4rem;
+  text-align: left;
+  line-height: 1;
+}
+
+.homeContent h1 {
+  font-size: 5rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Button */
+
+#loginBtn,
+#log {
+  background-image: linear-gradient(
+    to right,
+    #fe6071,
+    #9ed8ff,
+    #9ed8ff,
+    #fe6071
+  );
+  background-size: 300%;
+  background-position: left;
+  border-radius: 50px;
+  color: #000000;
+  border: none;
+  outline: none;
+  padding: 0.8rem 2rem;
+  margin-top: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s background-position ease-in-out;
+}
+
+#loginBtn:hover,
+#log:hover {
+  background-position: right;
+}
+
+/* Right Side */
+
+#mainImg {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* Login Form */
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid #d1d1d4;
+  box-sizing: border-box;
+  background: transparent;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input:active,
+input:focus,
+input:hover {
+  outline: none;
+  border-bottom-color: #d297b2;
+}
+
+#title {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+#log {
+  padding: 0.5rem 2rem;
+}
+
+.footer {
+  margin-top: 120px;
+}
+
+.footer img {
+  height: 25px;
+  width: 25px;
+}
+
+.error {
+  background: #F2DEDE;
+  color: #A94442;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  margin: 20px auto;
+}
