@@ -8,16 +8,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['uname'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | HMS</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap"
-      rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/dash_style.css">
 </head>
+
 <body>
     <div class="container">
         <div class="nav">
@@ -43,6 +43,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['uname'])) {
                     <a href="#">
                         <span class="icon"><img src="../assets/contact.svg" alt="Patients"></span>
                         <span class="title">Patients</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="appointments.php">
+                        <span class="icon"><img src="../assets/folder.svg" alt="Sign Out"></span>
+                        <span class="title">Appointments</span>
                     </a>
                 </li>
                 <li>
@@ -130,24 +136,24 @@ if (isset($_SESSION['id']) && isset($_SESSION['uname'])) {
                 </div>
             </div>
 
-        <div class="appointments">
-            <div class="recent">
-                <div class="header">
-                   <h2>Most Recent Appointments</h2>
-                   <a href="#">View All</a>
-                </div>
-                <table>
-                       <tr>
-                           <th>ID</th>
-                           <th>Patient</th>
-                           <th>Doctor</th>
-                           <th>Date</th>
-                           <th>Symptoms</th>
-                           <th>Diagnosis</th>
-                           <th>Prescription</th>
-                       </tr>
-                       <?php
-                        $sql = "SELECT * FROM appointments ORDER BY id DESC LIMIT 3";
+            <div class="appointments">
+                <div class="recent">
+                    <div class="header">
+                        <h2>Most Recent Appointments</h2>
+                        <a href="appointments.php">View All</a>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Patient</th>
+                            <th>Doctor</th>
+                            <th>Date</th>
+                            <th>Symptoms</th>
+                            <th>Diagnosis</th>
+                            <th>Prescription</th>
+                        </tr>
+                        <?php
+                        $sql = "SELECT * FROM appointments ORDER BY id DESC LIMIT 4";
                         $result = $conn -> query($sql);
 
                         if($result -> num_rows > 0) {
@@ -159,35 +165,37 @@ if (isset($_SESSION['id']) && isset($_SESSION['uname'])) {
                         };
                         $conn->close();
                        ?>
-                   </table>
+                    </table>
+                </div>
             </div>
-        </div>
-        
+
         </div>
 
     </div>
 
     <script>
-        let toggle = document.querySelector('.toggle');
-        let list = document.querySelector('.nav');
-        let content = document.querySelector('.content');
+    let toggle = document.querySelector('.toggle');
+    let list = document.querySelector('.nav');
+    let content = document.querySelector('.content');
 
-        toggle.onclick = function() {
-            list.classList.toggle('active');
-            content.classList.toggle('active');
-        }
+    toggle.onclick = function() {
+        list.classList.toggle('active');
+        content.classList.toggle('active');
+    }
 
-        let nav = document.querySelectorAll('.nav li');
-        function linkActive() {
-            nav.forEach((item) =>
-            item.classList.remove('hovered'));
-            this.classList.add('hovered');
-        };
+    let nav = document.querySelectorAll('.nav li');
 
+    function linkActive() {
         nav.forEach((item) =>
+            item.classList.remove('hovered'));
+        this.classList.add('hovered');
+    };
+
+    nav.forEach((item) =>
         item.addEventListener('mouseover', linkActive));
     </script>
 </body>
+
 </html>
 
 <?php

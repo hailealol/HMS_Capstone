@@ -1,251 +1,259 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-   min-height: 100vh;
-   overflow-x: hidden; 
-   background: #fafafa;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #fafafa;
 }
 
 .container {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .logo {
-    height: 54px;
-    width: 58px;
+  height: 54px;
+  width: 58px;
 }
 
 .nav {
-    position: fixed;
-    width: 300px;
-    height: 100%;
-    background: #d297b2;
-    border-left: 10px solid #d297b2;
-    transition: 0.5s;
-    overflow: hidden;
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: #9ed8ff;
+  border-left: 10px solid #9ed8ff;
+  transition: 0.5s;
+  overflow: hidden;
 }
 
 .nav.active {
-    width: 75px;
+  width: 75px;
 }
 
 .nav ul {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .nav ul li {
-    position: relative;
-    width: 100%;
-    list-style: none;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
 
-.nav ul li:hover, .nav ul li.hovered {
-    background: #fafafa;
+.nav ul li:hover,
+.nav ul li.hovered {
+  background: #fafafa;
 }
 
 .nav ul li:nth-child(1) {
-    margin-bottom: 30px;
-    pointer-events: none;
+  margin-bottom: 30px;
+  pointer-events: none;
 }
 
 .nav ul li a {
-    position: relative;
-    display: block;
-    width: 100%;
-    display: flex;
-    text-decoration: none;
-    color: #000000;
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: #000000;
 }
 
 .nav ul li a .icon {
-    position: relative;
-    display: block;
-    min-width: 60px;
-    height: 60px;
-    line-height: 80px;
-    text-align: center;
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 80px;
+  text-align: center;
 }
 
 .icon {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
 }
 
 .nav ul li a .title {
-    position: relative;
-    display: block;
-    padding: .10px;
-    height: 60px;
-    line-height: 60px;
-    text-align: start;
-    white-space: nowrap;
+  position: relative;
+  display: block;
+  padding: 0.1px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
 }
 
-.nav ul li:hover a::before, .nav ul li.hovered a::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    right: 0;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    box-shadow: 35px 35px 0 10px #fafafa;
-    pointer-events: none;
+.nav ul li:hover a::before,
+.nav ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px #fafafa;
+  pointer-events: none;
 }
 
-.nav ul li:hover a::after, .nav ul li.hovered a::after {
-    content: '';
-    position: absolute;
-    bottom: -50px;
-    right: 0;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    box-shadow: 35px -35px 0 10px #fafafa;
-    pointer-events: none;
+.nav ul li:hover a::after,
+.nav ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px #fafafa;
+  pointer-events: none;
 }
 
 .content {
-    position: absolute;
-    width: calc(100% - 300px);
-    left: 300px;
-    min-height: 100vh;
-    background: #fafafa;
-    transition: 0.5s;
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: #fafafa;
+  transition: 0.5s;
 }
 
 .content.active {
-    width: calc(100% - 75px);
-    left: 75px;
+  width: calc(100% - 75px);
+  left: 75px;
 }
 
 .bar {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 10px;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
 }
 
 .toggle {
-    position: relative;
-    top: 0;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  position: relative;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .welcome {
-    position: relative;
-    font-family: "Alegreya", serif;
-    font-size: 14px;
-    letter-spacing: 1px;
+  position: relative;
+  font-family: "Alegreya", serif;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 
 .user {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    background: #ececec;
-    border-radius: 50%;
-    padding: 3px;
-    cursor: pointer;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: #ececec;
+  border-radius: 50%;
+  padding: 3px;
+  cursor: pointer;
 }
 
 .dashCards {
-    position: relative;
-    width: 100%;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
 }
 
 .dashCards .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 7px 25px #c7c7c796;
-    border-radius: 20px;
-    padding: 40px;
-    margin: 30px;
-    transition: 0.2s ease-in-out;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 7px 25px #c7c7c796;
+  border-radius: 20px;
+  padding: 40px;
+  margin: 30px;
+  transition: 0.2s ease-in-out;
 }
 
 .dashCards .card:hover {
-    box-shadow: 0 7px 25px #c7c7c7c2; 
+  box-shadow: 0 7px 25px #c7c7c7c2;
+  background: #9ed8ff;
 }
 
 .dashCards .card .total {
-    padding-bottom: 15px;
-    border-bottom: 3px solid #d297b2;
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #9ed8ff;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dashCards .card:hover .total {
+  border-bottom: 3px solid #fafafa;
 }
 
 .dashCards .card .name {
-    padding-top: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #646464;
+  padding-top: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #646464;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .appointments {
-    position: relative;
-    width: 100%;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    grid-gap: 90px;
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-gap: 90px;
 }
 
 .appointments .recent {
-    position: relative;
-    display: grid;
-    min-height: 300px;
-    background: #fafafa;
-    padding: 20px;
-    box-shadow: 0 7px 25px #c7c7c796;
-    border-radius: 20px;
-    margin: 5px 30px;
+  position: relative;
+  display: grid;
+  min-height: 300px;
+  background: #fafafa;
+  padding: 20px;
+  box-shadow: 0 7px 25px #c7c7c796;
+  border-radius: 20px;
+  margin: 5px 30px;
 }
 
 .appointments table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    table-layout: fixed;
-    text-align: center;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  table-layout: fixed;
+  text-align: center;
 }
 
 .appointments td {
-    padding: 5px 20px;
-    border-bottom: 2px solid #c5c5c5;
+  padding: 5px 20px;
+  border-bottom: 2px solid #c5c5c5;
 }
 
 .appointments th {
-    background: #d297b2;
-    padding: 10px;
+  background: #9ed8ff;
+  padding: 10px;
 }
