@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "db_conn.php";
+include "../db_conn.php";
 
     if (isset($_POST['uname']) && isset($_POST['pword'])) {
         function validation($data) {
@@ -30,20 +30,20 @@ include "db_conn.php";
                     $_SESSION['uname'] = $row['uname'];
                     $_SESSION['name'] = $row['name'];
                     $_SESSION['id'] = $row['id'];
-                    header("Location: dashboard.php");
+                    header("Location: ../dashboard/dashboard.php");
                     exit();
                 } else {
-                    header("Location: login.php?error=Your username or password is incorrect.");
+                    header("Location: ../login.php?error=Your username or password is incorrect.");
                     exit();
                 };
             } else {
-                header("Location: login.php?error=Your username or password is incorrect.");
+                header("Location: ../login.php?error=Your username or password is incorrect.");
                 exit();
             };
         };
 
     } else {
-        header("Location: login.php");
+        header("Location: ../login.php");
         exit();
     };
 ?>

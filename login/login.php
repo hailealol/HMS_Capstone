@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <!-- Landing Page -->
@@ -19,13 +19,13 @@
       <div>
         <!-- Nav Bar -->
         <div class="header">
-          <a href="index.html"
-            ><img id="logo" src="assets/hmsLogo.png" alt="Logo"
+          <a href="../index.html"
+            ><img id="logo" src="../assets/hmsLogo.png" alt="Logo"
           /></a>
           <div class="nav">
             <nav>
               <ul>
-                <a href="index.html" id="active"
+                <a href="../index.html" id="active"
                   ><li class="navPage">Home</li></a
                 >
                 <li>|</li>
@@ -60,7 +60,7 @@
       </div>
       <div>
         <!-- Reminder: Compress Image -->
-        <img id="mainImg" src="assets/homeImg.jpg" alt="Nurse" />
+        <img id="mainImg" src="../assets/homeImg.jpg" alt="Nurse" />
       </div>
     </section>
   </body>

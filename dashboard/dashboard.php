@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "db_conn.php";
+include "../db_conn.php";
 
 if (isset($_SESSION['id']) && isset($_SESSION['uname'])) {
 
@@ -16,7 +16,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uname'])) {
     <link
       href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap"
       rel="stylesheet"/>
-    <link rel="stylesheet" href="dash_style.css">
+    <link rel="stylesheet" href="../css/dash_style.css">
 </head>
 <body>
     <div class="container">
@@ -24,30 +24,30 @@ if (isset($_SESSION['id']) && isset($_SESSION['uname'])) {
             <ul>
                 <li>
                     <a href="dashboard.php">
-                        <span class="icon"><img class="logo" src="assets/hmsLogo.png" alt="Logo"></span>
+                        <span class="icon"><img class="logo" src="../assets/hmsLogo.png" alt="Logo"></span>
                     </a>
                 </li>
                 <li class="hovered">
                     <a href="#">
-                        <span class="icon"><img src="assets/home.svg" alt="Dashboard"></span>
+                        <span class="icon"><img src="../assets/home.svg" alt="Dashboard"></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><img src="assets/contact.svg" alt="Doctors"></span>
+                        <span class="icon"><img src="../assets/contact.svg" alt="Doctors"></span>
                         <span class="title">Doctors</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><img src="assets/contact.svg" alt="Patients"></span>
+                        <span class="icon"><img src="../assets/contact.svg" alt="Patients"></span>
                         <span class="title">Patients</span>
                     </a>
                 </li>
                 <li>
-                    <a href="index.html">
-                        <span class="icon"><img src="assets/signout.svg" alt="Sign Out"></span>
+                    <a href="../index.html">
+                        <span class="icon"><img src="../assets/signout.svg" alt="Sign Out"></span>
                         <span class="title">Sign Out</span>
                     </a>
                 </li>
@@ -57,13 +57,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['uname'])) {
         <div class="content">
             <div class="bar">
                 <div class="toggle">
-                    <img src="assets/menu.svg" alt="Menu">
+                    <img src="../assets/menu.svg" alt="Menu">
                 </div>
                 <div class="welcome">
                     <h1>Hello, <?php echo $_SESSION['name']; ?>!</h1>
                 </div>
                 <div class="user">
-                    <img src="assets/contact.svg" alt="Profile">
+                    <img src="../assets/contact.svg" alt="Profile">
                 </div>
             </div>
 
@@ -113,13 +113,28 @@ if (isset($_SESSION['id']) && isset($_SESSION['uname'])) {
                         <div class="name">Total Patients</div>
                     </div>
                 </div>
+                <div class="card">
+                    <div>
+                        <?php
+                            $aptmt = "SELECT * from appointments";
+                            $aptmt_run = mysqli_query($conn, $aptmt);
+
+                            if($total_aptmt = mysqli_num_rows($aptmt_run)) {
+                                echo '<div class="total">'.$total_aptmt.'</div>';
+                            } else {
+                                echo '<div class="total">No Data</div>';
+                            };
+                        ?>
+                        <div class="name">Total Appointments</div>
+                    </div>
+                </div>
             </div>
 
         <div class="appointments">
             <div class="recent">
                 <div class="header">
                    <h2>Most Recent Appointments</h2>
-                   <a href="#" class="btn">View All</a>
+                   <a href="#">View All</a>
                 </div>
                 <table>
                        <tr>
@@ -132,7 +147,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uname'])) {
                            <th>Prescription</th>
                        </tr>
                        <?php
-                        $sql = "SELECT * FROM appointments ORDER BY id DESC";
+                        $sql = "SELECT * FROM appointments ORDER BY id DESC LIMIT 3";
                         $result = $conn -> query($sql);
 
                         if($result -> num_rows > 0) {
