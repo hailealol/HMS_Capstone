@@ -240,7 +240,7 @@ body {
   margin: 5px 30px;
 }
 
-.appointments table {
+.appointments table, .fullList table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
@@ -248,12 +248,22 @@ body {
   text-align: center;
 }
 
-.appointments td {
+.appointments td, .fullList td {
   padding: 5px 20px;
   border-bottom: 2px solid #c5c5c5;
 }
 
-.appointments th {
+.appointments th, .fullList th {
   background: #9ed8ff;
   padding: 10px;
+}
+
+.fullList {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+}
+
+.fullList .recent {
+  margin: 5px 30px;
 }

@@ -13,7 +13,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uname'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | HMS</title>
+    <title>Doctors | HMS</title>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/dash_style.css">
 </head>
@@ -27,13 +27,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['uname'])) {
                         <span class="icon"><img class="logo" src="../assets/hmsLogo.png" alt="Logo"></span>
                     </a>
                 </li>
-                <li class="hovered">
+                <li>
                     <a href="dashboard.php">
                         <span class="icon"><img src="../assets/home.svg" alt="Dashboard"></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
-                <li>
+                <li class="hovered">
                     <a href="doctors.php">
                         <span class="icon"><img src="../assets/contact.svg" alt="Doctors"></span>
                         <span class="title">Doctors</span>
@@ -73,92 +73,26 @@ if (isset($_SESSION['id']) && isset($_SESSION['uname'])) {
                 </div>
             </div>
 
-            <div class="dashCards">
-                <div class="card">
-                    <div>
-                        <?php
-                            $admin = "SELECT * from users";
-                            $admin_run = mysqli_query($conn, $admin);
-
-                            if($total_admin = mysqli_num_rows($admin_run)) {
-                                echo '<div class="total">'.$total_admin.'</div>';
-                            } else {
-                                echo '<div class="total">No Data</div>';
-                            };
-                        ?>
-                        <div class="name">Total Admins</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div>
-                        <?php
-                            $doctor = "SELECT * from doctors";
-                            $doctor_run = mysqli_query($conn, $doctor);
-
-                            if($total_doctor = mysqli_num_rows($doctor_run)) {
-                                echo '<div class="total">'.$total_doctor.'</div>';
-                            } else {
-                                echo '<div class="total">No Data</div>';
-                            };
-                        ?>
-                        <div class="name">Total Doctors</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div>
-                        <?php
-                            $patient = "SELECT * from patients";
-                            $patient_run = mysqli_query($conn, $patient);
-
-                            if($total_patient = mysqli_num_rows($patient_run)) {
-                                echo '<div class="total">'.$total_patient.'</div>';
-                            } else {
-                                echo '<div class="total">No Data</div>';
-                            };
-                        ?>
-                        <div class="name">Total Patients</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div>
-                        <?php
-                            $aptmt = "SELECT * from appointments";
-                            $aptmt_run = mysqli_query($conn, $aptmt);
-
-                            if($total_aptmt = mysqli_num_rows($aptmt_run)) {
-                                echo '<div class="total">'.$total_aptmt.'</div>';
-                            } else {
-                                echo '<div class="total">No Data</div>';
-                            };
-                        ?>
-                        <div class="name">Total Appointments</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="appointments">
+            <div class="fullList">
                 <div class="recent">
                     <div class="header">
-                        <h2>Most Recent Appointments</h2>
-                        <a href="appointments.php">View All</a>
+                        <h2>Doctors</h2>
                     </div>
                     <table>
                         <tr>
                             <th>ID</th>
-                            <th>Patient</th>
-                            <th>Doctor</th>
-                            <th>Date</th>
-                            <th>Symptoms</th>
-                            <th>Diagnosis</th>
-                            <th>Prescription</th>
+                            <th>First</th>
+                            <th>Last</th>
+                            <th>Specialty</th>
+                            <th>Email</th>
                         </tr>
                         <?php
-                        $sql = "SELECT * FROM appointments ORDER BY id DESC LIMIT 4";
+                        $sql = "SELECT * FROM doctors";
                         $result = $conn -> query($sql);
 
                         if($result -> num_rows > 0) {
                             while($row = $result -> fetch_assoc()) {
-                                echo "<tr><td>" . $row["id"] . "</td><td>" . $row["patient"] . "</td><td>" . $row["doctor"] . "</td><td>" . $row["date"] . "</td><td>" . $row["symptoms"] . "</td><td>" . $row["diagnosis"] . "</td><td>" . $row["prescription"] . "</td></tr>";
+                                echo "<tr><td>" . $row["id"] . "</td><td>" . $row["fname"] . "</td><td>" . $row["lname"] . "</td><td>" . $row["specialty"] . "</td><td>" . $row["email"] . "</td></tr>";
                             };
                         } else {
                             echo "No Data";
