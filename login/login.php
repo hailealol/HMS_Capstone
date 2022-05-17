@@ -46,12 +46,12 @@
           <input
             type="text"
             placeholder="Enter Username..."
-            name="uname"
+            name="uname" autocomplete = "off"
           />
           <input
             type="password"
             placeholder="Enter Password..."
-            name="pword"
+            name="pword" autocomplete = "off"
           />
           <em><p>*Consult receptionist for your login information.</p></em>
           <button id="log" type="submit">Login</button>

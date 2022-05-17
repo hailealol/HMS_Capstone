@@ -37,9 +37,9 @@
         <div class="homeContent">
             <h2 class="title">Contact</h2>
             <form action="" method="POST">
-              <input type="text" placeholder="Name" name="name"/>
-              <input type="text" placeholder="Email" name="email"/>
-              <input type="text" placeholder="Subject" name="subject"/>
+              <input type="text" placeholder="Name" name="name" autocomplete = "off"/>
+              <input type="text" placeholder="Email" name="email" autocomplete = "off"/>
+              <input type="text" placeholder="Subject" name="subject" autocomplete = "off"/>
               <textarea placeholder="Your message" name="msg" cols="30" rows="10" maxlength="255"></textarea>
               <button id="log" type="submit" onclick="submitTest()">Submit</button>
             </form>
