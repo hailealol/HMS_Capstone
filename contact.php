@@ -23,47 +23,36 @@
           <div class="nav">
             <nav>
               <ul>
-                <a href="index.html" id="active"
+                <a href="index.html"
                   ><li class="navPage">Home</li></a
                 >
                 <li>|</li>
                 <a href="about.html"><li class="navPage">About</li></a>
                 <li>|</li>
-                <a href="contact.php"><li class="navPage">Contact</li></a>
+                <a href="contact.php" id="active"><li class="navPage">Contact</li></a>
               </ul>
             </nav>
           </div>
         </div>
         <div class="homeContent">
-          <h1>Keeping track<br />of your health has never<br />been easier</h1>
-          <form method="POST" action="login/login.php">
-            <button id="loginBtn" type="submit">Get Started</button>
-          </form>
-          <div class="footer">
-            <ul>
-              <li>
-                <a href="https://github.com/hailealol" target="_blank"
-                  ><img src="assets/github.svg" alt="GitHub"
-                /></a>
-              </li>
-              <li>
-                <a href=""
-                  ><img src="assets/instagram.svg" alt="Instagram"
-                /></a>
-              </li>
-              <li>
-                <a href=""><img src="assets/facebook.svg" alt="Facebook" /></a>
-              </li>
-              <li>
-                <a href=""><img src="assets/twitter.svg" alt="Twitter" /></a>
-              </li>
-            </ul>
-          </div>
+            <h2 class="title">Contact</h2>
+            <form action="" method="POST">
+              <input type="text" placeholder="Name" name="name"/>
+              <input type="text" placeholder="Email" name="email"/>
+              <input type="text" placeholder="Subject" name="subject"/>
+              <textarea placeholder="Your message" name="msg" cols="30" rows="10" maxlength="255"></textarea>
+              <button id="log" type="submit" onclick="submitTest()">Submit</button>
+            </form>
         </div>
       </div>
       <div>
         <img id="mainImg" src="assets/homeImg.jpg" alt="Nurse" />
       </div>
     </section>
+    <script>
+      function submitTest() {
+        alert("Your email has been sent.");
+      }
+    </script>
   </body>
 </html>

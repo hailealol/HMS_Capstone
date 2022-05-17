@@ -94,7 +94,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['uname'])) {
 
                         if($result -> num_rows > 0) {
                             while($row = $result -> fetch_assoc()) {
-                                echo "<tr><td>" . $row["id"] . "</td><td>" . $row["fname"] . "</td><td>" . $row["lname"] . "</td><td>" . $row["gender"] . "</td><td>" . $row["age"] . "</td><td>" . $row["phone"] . "</td><td>" . $row["address"] . "</td></tr>";
+                                echo "<tr><td>" . $row['id'] . "</td><td>" . $row["fname"] . "</td><td>" . $row["lname"] . "</td><td>" . $row["gender"] . "</td><td>" . $row["age"] . "</td><td>" . $row["phone"] . "</td><td>" . $row["address"] . "</td></tr>";
                             };
                         } else {
                             echo "No Data";
