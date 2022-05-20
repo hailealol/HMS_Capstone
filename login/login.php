@@ -31,7 +31,7 @@
                 <li>|</li>
                 <a href="../about.html"><li class="navPage">About</li></a>
                 <li>|</li>
-                <a href="../contact.php"><li class="navPage">Contact</li></a>
+                <a href="../contact.html"><li class="navPage">Contact</li></a>
               </ul>
             </nav>
           </div>
